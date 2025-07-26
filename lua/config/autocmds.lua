@@ -22,3 +22,28 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "o" })
   end,
 })
+
+vim.schedule(function()
+  local notify = require("lazyvim.util").notify
+
+  if not vim.env.REPOSITORY_PATH or vim.env.REPOSITORY_PATH == "" then
+    local input = vim.fn.input("Set REPOSITORY_PATH (optional): ", "", "dir")
+    if input and input ~= "" then
+      vim.env.REPOSITORY_PATH = input
+      notify({
+        msg = "REPOSITORY_PATH set to:\n" .. input,
+        level = "info",
+      })
+    else
+      notify({
+        msg = "REPOSITORY_PATH not set (left blank)",
+        level = "warn",
+      })
+    end
+  else
+    notify({
+      msg = "REPOSITORY_PATH is already set:\n" .. vim.env.REPOSITORY_PATH,
+      level = "info",
+    })
+  end
+end)

@@ -4,11 +4,12 @@ return {
   opts = function()
     return {
       formatters_by_ft = {
-        lua = { "stylua" },
-        javascript = { "prettierd" },
-        javascriptreact = { "prettierd" },
-        typescript = { "prettierd" },
-        typescriptreact = { "eslint_d", "prettierd", stop_after_first = true },
+        lua = { "ast-grep", "stylua" },
+        javascript = { "eslint_d", "ast-grep", "prettierd", stop_after_first = true },
+        javascriptreact = { "eslint_d", "ast-grep", "prettierd", stop_after_first = true },
+        typescript = { "eslint_d", "ast-grep", "prettierd", stop_after_first = true },
+        typescriptreact = { "eslint_d", "ast-grep", "prettierd", stop_after_first = true },
+        json = { "prettierd" },
       },
       formatters = {
         prettierd = {
