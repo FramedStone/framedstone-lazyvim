@@ -23,6 +23,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- MCPHub: Set REPOSITORY_PATH if not already set
 vim.schedule(function()
   local notify = require("lazyvim.util").notify
 
@@ -47,3 +48,12 @@ vim.schedule(function()
     })
   end
 end)
+
+-- auto-commenting when pressing o/O or Enter
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    -- Remove auto-commenting when pressing o/O or Enter
+    vim.opt_local.formatoptions:remove({ "o", "r", "c" })
+  end,
+})
