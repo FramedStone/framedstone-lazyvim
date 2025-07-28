@@ -110,9 +110,9 @@ return {
       local envPath = vim.fn.stdpath("config") .. "/.env"
       loadEnvFile(envPath)
 
-      local figmaToken = os.getenv("FIGMA_TOKEN")
+      local figmaToken = os.getenv("FIGMA_API_KEY")
       if not figmaToken then
-        vim.notify("⚠️ FIGMA_TOKEN not found in ~/.config/nvim/.env", vim.log.levels.ERROR)
+        vim.notify("⚠️ FIGMA_API_KEY not found in ~/.config/nvim/.env", vim.log.levels.ERROR)
         return
       end
 
