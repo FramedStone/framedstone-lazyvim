@@ -10,6 +10,7 @@ return {
         typescript = { "eslint_d", "ast-grep", "prettierd", stop_after_first = true },
         typescriptreact = { "eslint_d", "ast-grep", "prettierd", stop_after_first = true },
         json = { "prettierd" },
+        rust = { "ast-grep" },
       },
       formatters = {
         prettierd = {
