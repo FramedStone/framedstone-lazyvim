@@ -10,7 +10,7 @@ return {
     lazy = false,
     opts = {
       sticky = {
-        "$",
+        "$gpt-4.1",
         "#file:",
       },
       window = {
@@ -30,6 +30,7 @@ return {
     config = function(_, opts)
       local chat = require("CopilotChat")
       local isReady = false
+      local isChatOpen = false
 
       chat.setup(opts)
 
@@ -38,13 +39,31 @@ return {
         isReady = true
       end, 150)
 
+      local function hasChatHistory()
+        local historyPath = vim.fn.stdpath("data") .. "//copilotchat_history/default.json"
+        return vim.fn.filereadable(historyPath) == 1
+      end
+
       -- Safe toggle that waits for sticky init
       vim.g.safeToggleCopilotChat = function()
         if not isReady then
           vim.notify("🕐 CopilotChat is still initializing...", vim.log.levels.WARN)
           return
         end
-        chat.toggle()
+
+        if not isChatOpen then
+          if hasChatHistory() then
+            opts.sticky = {} -- to prevent default sticky note to be appended again
+            chat.setup(opts)
+          end
+          chat.load()
+          chat.toggle()
+          isChatOpen = true
+        else
+          chat.save()
+          chat.toggle()
+          isChatOpen = false
+        end
       end
     end,
     keys = {
@@ -53,7 +72,7 @@ return {
         function()
           vim.g.safeToggleCopilotChat()
         end,
-        desc = "CopilotChat: Open",
+        desc = "CopilotChat: Toogle",
       },
     },
   },
