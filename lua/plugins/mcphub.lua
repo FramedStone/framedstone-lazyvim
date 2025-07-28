@@ -10,8 +10,8 @@ return {
     lazy = false,
     opts = {
       sticky = {
-        "$claude-sonnet-4",
-        "#files",
+        "$",
+        "#file:",
       },
       window = {
         layout = "vertical", -- 'vertical', 'horizontal', 'float', 'replace', or a function that returns the layout
