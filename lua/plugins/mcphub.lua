@@ -44,7 +44,14 @@ return {
       },
     },
   },
-
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    optional = true,
+    opts = {
+      file_types = { "markdown", "copilot-chat" },
+    },
+    ft = { "markdown", "copilot-chat" },
+  },
   {
     "ravitemer/mcphub.nvim",
     dependencies = {
