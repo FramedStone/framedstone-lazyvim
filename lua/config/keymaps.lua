@@ -50,3 +50,6 @@ vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default regis
 -- lsp suggestion navigation
 vim.api.nvim_set_keymap("i", "<C-j>", "<C-n>", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-k>", "<C-p>", { noremap = true })
+
+-- undotree
+vim.keymap.set("n", "<leader>ut", ":UndotreeToggle<CR>") -- close current split
