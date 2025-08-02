@@ -7,6 +7,7 @@ return {
       { "nvim-lua/plenary.nvim", branch = "master" },
     },
     branch = "tools",
+    event = "VeryLazy",
     lazy = false,
     opts = {
       sticky = {
@@ -51,19 +52,22 @@ return {
           return
         end
 
-        if not isChatOpen then
-          if hasChatHistory() then
-            opts.sticky = {} -- to prevent default sticky note to be appended again
-            chat.setup(opts)
-          end
-          chat.load()
-          chat.toggle()
-          isChatOpen = true
-        else
-          chat.save()
-          chat.toggle()
-          isChatOpen = false
-        end
+        -- Auto save and load default chat
+        -- if not isChatOpen then
+        --   if hasChatHistory() then
+        --     opts.sticky = {} -- to prevent default sticky note to be appended again
+        --     chat.setup(opts)
+        --   end
+        --   chat.load()
+        --   chat.toggle()
+        --   isChatOpen = true
+        -- else
+        --   chat.save()
+        --   chat.toggle()
+        --   isChatOpen = false
+        -- end
+
+        chat.toggle()
       end
     end,
     keys = {
@@ -79,6 +83,7 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     optional = true,
+    event = "VerLazy",
     opts = {
       file_types = { "markdown", "copilot-chat" },
     },
@@ -90,6 +95,7 @@ return {
       "nvim-lua/plenary.nvim",
     },
     build = "npm install -g mcp-hub@latest",
+    event = "VeryLazy",
     lazy = false,
     config = function()
       -- Load .env from ~/.config/nvim/.env

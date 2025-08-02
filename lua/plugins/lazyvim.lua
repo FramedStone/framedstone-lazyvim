@@ -1,9 +1,10 @@
 return {
   {
     "LazyVim/LazyVim",
+    event = "VeryLazy",
     opts = {
-      colorscheme = "catppuccin",
-      style = "mocha",
+      colorscheme = "tokyonight",
+      -- style = "mocha",
       -- tokyonight
       -- catppuccin
     },

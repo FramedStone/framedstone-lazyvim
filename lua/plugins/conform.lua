@@ -1,6 +1,7 @@
 -- ~/.config/nvim/lua/plugins/conform.lua
 return {
   "stevearc/conform.nvim",
+  event = "VeryLazy",
   opts = function()
     return {
       formatters_by_ft = {
