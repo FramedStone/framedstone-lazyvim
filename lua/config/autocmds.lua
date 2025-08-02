@@ -25,17 +25,19 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- MCPHub: git tools
 vim.schedule(function()
-  local notify = require("lazyvim.util").notify
+  -- local notify = require("lazyvim.util").notify
 
   local defaultPath = vim.fn.getcwd()
-  local input = vim.fn.input("Set REPOSITORY_PATH (default=CURRENT_PATH): ", defaultPath, "dir")
-  if input and input ~= "" then
-    vim.env.REPOSITORY_PATH = input
-    notify({
-      msg = "REPOSITORY_PATH set to:\n" .. input,
-      level = "info",
-    })
-  end
+  -- local input = vim.fn.input("Set REPOSITORY_PATH (default=CURRENT_PATH): ", defaultPath, "dir")
+  -- if input and input ~= "" then
+  --   vim.env.REPOSITORY_PATH = input
+  --   notify({
+  --     msg = "REPOSITORY_PATH set to:\n" .. input,
+  --     level = "info",
+  --   })
+  -- end
+
+  vim.env.REPOSITORY_PATH = defaultPath
 end)
 
 -- auto-commenting when pressing o/O or Enter

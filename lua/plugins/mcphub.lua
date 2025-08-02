@@ -12,7 +12,9 @@ return {
     opts = {
       sticky = {
         "$gpt-4.1",
-        "#file:",
+        "@context7",
+        "@neovim",
+        "@mcphub",
       },
       window = {
         layout = "vertical", -- 'vertical', 'horizontal', 'float', 'replace', or a function that returns the layout
@@ -31,7 +33,7 @@ return {
     config = function(_, opts)
       local chat = require("CopilotChat")
       local isReady = false
-      local isChatOpen = false
+      -- local isChatOpen = false
 
       chat.setup(opts)
 
@@ -40,10 +42,10 @@ return {
         isReady = true
       end, 150)
 
-      local function hasChatHistory()
-        local historyPath = vim.fn.stdpath("data") .. "//copilotchat_history/default.json"
-        return vim.fn.filereadable(historyPath) == 1
-      end
+      -- local function hasChatHistory()
+      --   local historyPath = vim.fn.stdpath("data") .. "//copilotchat_history/default.json"
+      --   return vim.fn.filereadable(historyPath) == 1
+      -- end
 
       -- Safe toggle that waits for sticky init
       vim.g.safeToggleCopilotChat = function()
@@ -59,11 +61,11 @@ return {
         --     chat.setup(opts)
         --   end
         --   chat.load()
-        --   chat.toggle()
+        --   chat.open()
         --   isChatOpen = true
         -- else
         --   chat.save()
-        --   chat.toggle()
+        --   chat.close()
         --   isChatOpen = false
         -- end
 
