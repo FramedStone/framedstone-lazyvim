@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "args": ["@playwright/mcp@latest"],
+      "command": "npx"
+    },
+    "git": {
+      "args": ["mcp-server-git", "--repository", "${REPOSITORY_PATH}"],
+      "command": "uvx"
+    },
+    "figma": {
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=${FIGMA_API_KEY}",
+        "--stdio"
+      ],
+      "command": "cmd",
+      "autoApprove": ["get_figma_data", "download_figma_images"],
+      "env": {
+        "FIGMA_API_KEY": "${FIGMA_API_KEY}"
+      }
+    },
+    "context7": {
+      "type": "streamable-http",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "memory": {
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "command": "npx"
+    },
+    "time": {
+      "args": ["mcp-server-time"],
+      "command": "uvx",
+      "disabled": false
+    },
+    "brave-search": {
+      "args": ["-y", "brave-search-mcp"],
+      "command": "npx",
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      },
+      "disabled": false
+    },
+    "sequentialthinking": {
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "command": "npx"
+    },
+    "fetch": {
+      "args": ["mcp-server-fetch"],
+      "command": "uvx",
+      "disabled": false
+    }
+  }
+}

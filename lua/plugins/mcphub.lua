@@ -15,6 +15,7 @@ return {
         "@context7",
         "@neovim",
         "@mcphub",
+        "@brave-search",
       },
       window = {
         layout = "vertical", -- 'vertical', 'horizontal', 'float', 'replace', or a function that returns the layout
@@ -121,6 +122,12 @@ return {
       local figmaToken = os.getenv("FIGMA_API_KEY")
       if not figmaToken then
         vim.notify("⚠️ FIGMA_API_KEY not found in ~/.config/nvim/.env", vim.log.levels.ERROR)
+        return
+      end
+
+      local braveKey = os.getenv("BRAVE_API_KEY")
+      if not braveKey then
+        vim.notify("⚠️ BRAVE_API_KEY not found in ~/.config/nvim/.env", vim.log.levels.ERROR)
         return
       end
 
