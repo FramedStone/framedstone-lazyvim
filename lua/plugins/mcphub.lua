@@ -16,6 +16,7 @@ return {
         "@neovim",
         "@mcphub",
         "@brave-search",
+        "#file:.github/copilot-instructions.md",
       },
       window = {
         layout = "vertical", -- 'vertical', 'horizontal', 'float', 'replace', or a function that returns the layout
