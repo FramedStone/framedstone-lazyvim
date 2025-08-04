@@ -3,3 +3,11 @@
 -- Add any additional options here
 vim.o.guicursor = "n-v-c-i:block" -- stays as block cursor
 vim.opt.fileformat = "unix"
+
+-- Force conversion on file open (including existing files)
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*",
+  callback = function()
+    vim.bo.fileformat = "unix"
+  end,
+})
