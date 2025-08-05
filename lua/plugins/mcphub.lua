@@ -103,34 +103,34 @@ return {
     lazy = false,
     config = function()
       -- Load .env from ~/.config/nvim/.env
-      local function loadEnvFile(filePath)
-        local file = io.open(filePath, "r")
-        if not file then
-          return
-        end
-        for line in file:lines() do
-          local key, value = line:match("^%s*([%w_]+)%s*=%s*(.+)%s*$")
-          if key and value and os.getenv(key) == nil then
-            vim.fn.setenv(key, value)
-          end
-        end
-        file:close()
-      end
+      -- local function loadEnvFile(filePath)
+      --   local file = io.open(filePath, "r")
+      --   if not file then
+      --     return
+      --   end
+      --   for line in file:lines() do
+      --     local key, value = line:match("^%s*([%w_]+)%s*=%s*(.+)%s*$")
+      --     if key and value and os.getenv(key) == nil then
+      --       vim.fn.setenv(key, value)
+      --     end
+      --   end
+      --   file:close()
+      -- end
 
-      local envPath = vim.fn.stdpath("config") .. "/.env"
-      loadEnvFile(envPath)
-
-      local figmaToken = os.getenv("FIGMA_API_KEY")
-      if not figmaToken then
-        vim.notify("⚠️ FIGMA_API_KEY not found in ~/.config/nvim/.env", vim.log.levels.ERROR)
-        return
-      end
-
-      local braveKey = os.getenv("BRAVE_API_KEY")
-      if not braveKey then
-        vim.notify("⚠️ BRAVE_API_KEY not found in ~/.config/nvim/.env", vim.log.levels.ERROR)
-        return
-      end
+      -- local envPath = vim.fn.stdpath("config") .. "/.env"
+      -- loadEnvFile(envPath)
+      --
+      -- local figmaToken = os.getenv("FIGMA_API_KEY")
+      -- if not figmaToken then
+      --   vim.notify("⚠️ FIGMA_API_KEY not found in ~/.config/nvim/.env", vim.log.levels.ERROR)
+      --   return
+      -- end
+      --
+      -- local braveKey = os.getenv("BRAVE_API_KEY")
+      -- if not braveKey then
+      --   vim.notify("⚠️ BRAVE_API_KEY not found in ~/.config/nvim/.env", vim.log.levels.ERROR)
+      --   return
+      -- end
 
       require("mcphub").setup({
         extensions = {
