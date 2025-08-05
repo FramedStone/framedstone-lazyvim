@@ -32,6 +32,7 @@ return {
         "@mcphub",
         "@brave_search_brave_web_search",
         "@brave_search_brave_local_search",
+        "@sequentialthinking use sequentialthinking before answering",
         "#file:.github/copilot-instructions.md",
       },
       window = {
