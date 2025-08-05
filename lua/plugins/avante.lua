@@ -16,7 +16,7 @@ return {
       openrouter = {
         __inherited_from = "openai",
         endpoint = "https://openrouter.ai/api/v1",
-        api_key_name = "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",
+        api_key_name = "${AVANTE_API_KEY}",
         model = "deepseek/deepseek-r1",
       },
       -- claude = {
