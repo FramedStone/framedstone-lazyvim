@@ -17,6 +17,8 @@ return {
                 add_mcp_prefix = false,
               },
             },
+            auto_approve = true,
+            auto_toggle_mcp_servers = true,
           })
         end,
       },
