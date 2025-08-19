@@ -43,6 +43,12 @@
         "FIGMA_API_KEY": "${FIGMA_API_KEY}"
       },
       "autoApprove": ["get_figma_data", "download_figma_images"]
+    },
+    "Sentry": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote@latest", "https://mcp.sentry.dev/mcp"],
+      "env": {},
+      "working_directory": null
     }
   }
 }
