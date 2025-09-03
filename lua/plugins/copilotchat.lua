@@ -36,6 +36,7 @@ return {
         "@brave_search_brave_local_search",
         "@sequentialthinking use sequentialthinking before answering",
         "#file:.github/copilot-instructions.md",
+        "#file:CLAUDE.md",
       },
       window = {
         layout = "vertical",
