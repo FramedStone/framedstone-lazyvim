@@ -30,7 +30,7 @@ return {
       sticky = {
         "$gpt-4.1",
         "@context7",
-        "@neovim always use edit files",
+        "@neovim always use neovim_edit_file to directly modify the files",
         "@mcphub",
         "@brave_search_brave_web_search",
         "@brave_search_brave_local_search",
