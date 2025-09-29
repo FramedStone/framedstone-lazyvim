@@ -4,11 +4,6 @@
       "url": "https://mcp.context7.com/mcp",
       "type": "streamable-http"
     },
-    "time": {
-      "command": "uvx",
-      "args": ["mcp-server-time"],
-      "disabled": false
-    },
     "brave_search": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-brave-search"],
@@ -16,18 +11,9 @@
         "BRAVE_API_KEY": "${BRAVE_API_KEY}"
       }
     },
-    "memory": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"]
-    },
     "sequentialthinking": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
-    },
-    "fetch": {
-      "command": "uvx",
-      "args": ["mcp-server-fetch"],
-      "disabled": false
     },
     "figma": {
       "command": "cmd",
@@ -44,11 +30,15 @@
       },
       "autoApprove": ["get_figma_data", "download_figma_images"]
     },
-    "Sentry": {
+    "shadcn": {
       "command": "npx",
-      "args": ["-y", "mcp-remote@latest", "https://mcp.sentry.dev/mcp"],
+      "args": ["shadcn@latest", "mcp"],
       "env": {},
       "working_directory": null
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest"]
     }
   }
 }
