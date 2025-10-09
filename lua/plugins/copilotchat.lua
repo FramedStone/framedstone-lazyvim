@@ -29,14 +29,11 @@ return {
     opts = {
       sticky = {
         "$gpt-4.1",
-        "@context7",
-        "@neovim always use neovim_edit_file to directly modify the files",
-        "@mcphub",
-        "@brave_search_brave_web_search",
-        "@brave_search_brave_local_search",
+        "@neovim",
+        "@neovim_edit_file always use neovim_edit_file when modifying files are required",
         "@sequentialthinking use sequentialthinking before answering",
-        "#file:.github/copilot-instructions.md",
-        "#file:CLAUDE.md",
+        "#file:/Users/leeweixuan/.config/obsidian-sync/aasdc/agents/v2/frontend-dev.yaml",
+        "#file:/Users/leeweixuan/.config/obsidian-sync/aasdc/agents/v2/codebase-analyzer.yaml",
       },
       window = {
         layout = "vertical",
