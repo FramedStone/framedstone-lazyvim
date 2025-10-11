@@ -29,16 +29,15 @@ return {
     opts = {
       sticky = {
         "$gpt-4.1",
-        "@neovim",
-        "@neovim_edit_file always use neovim_edit_file when modifying files are required",
+        "@neovim always use neovim_edit_file when modifying files are required",
         "@sequentialthinking use sequentialthinking before answering",
         "#file:/Users/leeweixuan/.config/obsidian-sync/aasdc/agents/v2/frontend-dev.yaml",
         "#file:/Users/leeweixuan/.config/obsidian-sync/aasdc/agents/v2/codebase-analyzer.yaml",
       },
       window = {
-        layout = "vertical",
-        width = 0.5,
-        height = 0.5,
+        layout = "float",
+        width = 0.7,
+        height = 0.7,
         relative = "editor",
         border = "single",
         row = nil,
@@ -46,6 +45,7 @@ return {
         title = "Copilot Chat",
         footer = nil,
         zindex = 1,
+        blend = 0, -- 100 = full transparent
       },
     },
   },
