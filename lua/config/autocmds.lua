@@ -48,3 +48,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "o", "r", "c" })
   end,
 })
+
+-- Auto-command to customize chat buffer behavior (CopilotChat.nvim)
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "copilot-*",
+  callback = function()
+    vim.opt_local.relativenumber = false
+    vim.opt_local.number = false
+    vim.opt_local.conceallevel = 0
+  end,
+})
