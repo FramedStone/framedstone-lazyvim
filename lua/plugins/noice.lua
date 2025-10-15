@@ -17,4 +17,21 @@ return {
       },
     },
   },
+
+  -- skip notifications
+  require("noice").setup({
+    routes = {
+      {
+        filter = {
+          event = "notify",
+          kind = "info",
+          any = {
+            { find = "claude" },
+          },
+        },
+        opts = { skip = true },
+      },
+      -- Add more routes to filter other notifications
+    },
+  }),
 }
