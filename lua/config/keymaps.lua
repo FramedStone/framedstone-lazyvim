@@ -56,3 +56,6 @@ vim.keymap.set("n", "<leader>ut", ":UndotreeToggle<CR>") -- close current split
 
 -- gitsigns
 vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
+
+-- claude-fzf-history
+vim.keymap.set("n", "<leader>ah", "<cmd>ClaudeHistory<cr>", {})
