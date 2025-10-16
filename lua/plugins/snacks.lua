@@ -36,5 +36,10 @@ return {
       hidden = true, -- for hidden files
       ignored = true, -- for .gitignore files
     },
+    terminal = {
+      win = {
+        position = "float",
+      },
+    },
   },
 }
