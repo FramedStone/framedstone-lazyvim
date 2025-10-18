@@ -59,3 +59,6 @@ vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
 
 -- claude-fzf-history
 vim.keymap.set("n", "<leader>ah", "<cmd>ClaudeHistory<cr>", {})
+
+-- opencode
+vim.keymap.set("n", "<leader>aaa", function() require("opencode").toggle() end, { desc = "Toggle opencode window" })
